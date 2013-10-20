@@ -1,0 +1,45 @@
+﻿@{
+    ViewBag.Title = "Home Page";  
+}
+
+<div id="container-wrapper">
+
+    <gm-map gm-map-id="'myMap'" gm-center="center" gm-zoom="zoom" gm-bounds="bounds" gm-map-type-id="mapTypeId" class="angular-google-map">
+        <gm-markers gm-objects="currentlocation"
+                    gm-get-lat-lng="{ lat: object.location.lat, lng: object.location.lng }"
+                    gm-get-marker-options="getCurrentLocation(object)">
+        </gm-markers>
+    </gm-map>
+    
+    <div id="container-content-wraper">
+        <div class="container">
+            
+            <div ng-controller="CuisineTypeaheadCtrl">
+                <div class="well well-small">
+                    <span class="search-text">
+                        Find me
+                        <input type="text" ng-model="selected.cuisine" typeahead="state.cuisine for state in restaurantdata | filter:$viewValue | unique:'cuisine' | limitTo:8" placeholder="eg. Italian">
+                        food near
+                        <input type="text" ng-model="selected.location" typeahead="state.location for state in restaurantdata | filter:$viewValue | unique:'location' | limitTo:8" placeholder="eg. London" />
+                    </span>
+                </div>
+                
+                <div class="well">
+                    <ul class="results-list">
+                        <li ng-animate="'animate'" ng-repeat="restaurant in restaurantdata | filter:selected">
+                            <div class="result-content">
+                                <h5> {{restaurant.name}} </h5>
+                                <div class="image-wrapper" style="background-image: url({{restaurant.image}});">
+                                    <img src="{{restaurant.image}}" />
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            
+        </div>
+    </div>
+</div>
+
