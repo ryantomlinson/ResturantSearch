@@ -49,29 +49,37 @@ function CuisineTypeaheadCtrl($scope) {
             name: "Jamies Italian",
             cuisine: "Italian",
             location: "London",
+            latitude: "51.511181",
+            longitude: "-0.062227",
             image: "https://s3.amazonaws.com/distilleryimage9/f6b46228e17811e195e3123138048d2c_6.jpg"
         },
         {
             name: "Raj",
             cuisine: "Indian",
             location: "London",
+            latitude: "51.512677",
+            longitude: "-0.088148",
             image: "https://s3.amazonaws.com/distilleryimage0/729e337affbd11e193de22000a1c8656_6.jpg"
         },
         {
             name: "Bella",
             cuisine: "Italian",
             location: "London",
+            latitude: "51.493336",
+            longitude: "-0.072699",
             image: "https://s3.amazonaws.com/distilleryimage0/c2f5a7be897e11e180d51231380fcd7e_6.jpg"
         },
         {
             name: "Mango Tree",
             cuisine: "Indian",
             location: "Durham",
+            latitude: "54.771633",
+            longitude: "-1.568298",
             image: "https://s3.amazonaws.com/distilleryimage2/6dde8aae149111e2b62322000a1e8a75_6.jpg"
         }
     ];
     
-
+    
     
     $scope.search = function (item) {
         if (item.cuisine.indexOf($scope.selected.cuisine) != -1 || item.location.indexOf($scope.selected.location) != -1) {
@@ -130,6 +138,11 @@ function MapDisplayCtrl($scope) {
         return angular.extend(
             $scope.options.currentlocation
         );
+    };
+
+    $scope.onSelect = function($item, $model, $label) {
+        latLongCoords = new google.maps.LatLng($item.latitude, $item.longitude);
+        $scope.center = latLongCoords;
     };
 
 }

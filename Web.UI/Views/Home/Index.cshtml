@@ -15,18 +15,20 @@
         <div class="container">
             
             <div ng-controller="CuisineTypeaheadCtrl">
-                <div class="well well-small">
+                <div class="well well-small search-options">
                     <span class="search-text">
                         Find me
                         <input type="text" ng-model="selected.cuisine" typeahead="state.cuisine for state in restaurantdata | filter:$viewValue | unique:'cuisine' | limitTo:8" placeholder="eg. Italian">
                         food near
-                        <input type="text" ng-model="selected.location" typeahead="state.location for state in restaurantdata | filter:$viewValue | unique:'location' | limitTo:8" placeholder="eg. London" />
+                        <input type="text" ng-model="selected.location" typeahead="state.location for state in restaurantdata | filter:$viewValue | unique:'location' | limitTo:8" placeholder="eg. London" typeahead-on-select='onSelect($item, $model, $label)'  />
                     </span>
                 </div>
                 
                 <div class="well">
                     <ul class="results-list">
-                        <li ng-animate="'animate'" ng-repeat="restaurant in restaurantdata | filter:selected">
+                        <li ng-animate="{enter: 'repeat-enter',
+                        leave: 'repeat-leave',
+                        move: 'repeat-move'}" ng-repeat="restaurant in restaurantdata | filter:selected">
                             <div class="result-content">
                                 <h5> {{restaurant.name}} </h5>
                                 <div class="image-wrapper" style="background-image: url({{restaurant.image}});">
