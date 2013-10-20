@@ -26,13 +26,14 @@
                 
                 <div class="results-container">
                     <ul class="results-list">
-                        <li ng-animate="{enter: 'repeat-enter',
-                        leave: 'repeat-leave',
-                        move: 'repeat-move'}" ng-repeat="restaurant in restaurantdata | filter:selected">
+                        <li ng-animate="'animate'" ng-repeat="restaurant in restaurantdata | filter:selected">
                             <div class="result-content">
                                 <h5> {{restaurant.name}} </h5>
                                 <div class="image-wrapper" style="background-image: url({{restaurant.image}});">
                                     <img src="{{restaurant.image}}" />
+                                </div>
+                                <div class="rating">
+                                    <rating value="rate" max="maxrating" readonly="isReadonly"></rating>
                                 </div>
                             </div>
                         </li>

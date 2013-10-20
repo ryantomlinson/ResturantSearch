@@ -51,7 +51,8 @@ function CuisineTypeaheadCtrl($scope) {
             location: "London",
             latitude: "51.511181",
             longitude: "-0.062227",
-            image: "https://s3.amazonaws.com/distilleryimage9/f6b46228e17811e195e3123138048d2c_6.jpg"
+            image: "https://s3.amazonaws.com/distilleryimage9/f6b46228e17811e195e3123138048d2c_6.jpg",
+            resrating: 3
         },
         {
             name: "Raj",
@@ -59,7 +60,8 @@ function CuisineTypeaheadCtrl($scope) {
             location: "London",
             latitude: "51.512677",
             longitude: "-0.088148",
-            image: "https://s3.amazonaws.com/distilleryimage0/729e337affbd11e193de22000a1c8656_6.jpg"
+            image: "https://s3.amazonaws.com/distilleryimage0/729e337affbd11e193de22000a1c8656_6.jpg",
+            resrating: 3
         },
         {
             name: "Bella",
@@ -67,7 +69,8 @@ function CuisineTypeaheadCtrl($scope) {
             location: "London",
             latitude: "51.493336",
             longitude: "-0.072699",
-            image: "https://s3.amazonaws.com/distilleryimage0/c2f5a7be897e11e180d51231380fcd7e_6.jpg"
+            image: "https://s3.amazonaws.com/distilleryimage0/c2f5a7be897e11e180d51231380fcd7e_6.jpg",
+            resrating: 3
         },
         {
             name: "Mango Tree",
@@ -75,7 +78,8 @@ function CuisineTypeaheadCtrl($scope) {
             location: "Durham",
             latitude: "54.771633",
             longitude: "-1.568298",
-            image: "https://s3.amazonaws.com/distilleryimage2/6dde8aae149111e2b62322000a1e8a75_6.jpg"
+            image: "https://s3.amazonaws.com/distilleryimage2/6dde8aae149111e2b62322000a1e8a75_6.jpg",
+            resrating: 3
         },
         {
             name: "Saigon Saigon",
@@ -83,7 +87,8 @@ function CuisineTypeaheadCtrl($scope) {
             location: "Liverpool",
             latitude: "51.511181",
             longitude: "-0.062227",
-            image: "https://s3.amazonaws.com/distilleryimage9/4c93f00c40e511e2b41022000a9f1899_6.jpg"
+            image: "https://s3.amazonaws.com/distilleryimage9/4c93f00c40e511e2b41022000a9f1899_6.jpg",
+            resrating: 3
         },
         {
             name: "Busaba Eathai",
@@ -91,7 +96,8 @@ function CuisineTypeaheadCtrl($scope) {
             location: "London",
             latitude: "51.512677",
             longitude: "-0.088148",
-            image: "https://s3.amazonaws.com/distilleryimage8/238928b2f95a11e1b65722000a1e9f8b_6.jpg"
+            image: "https://s3.amazonaws.com/distilleryimage8/238928b2f95a11e1b65722000a1e9f8b_6.jpg",
+            resrating: 3
         },
         {
             name: "Toms Kitchen",
@@ -99,7 +105,8 @@ function CuisineTypeaheadCtrl($scope) {
             location: "Birmingham",
             latitude: "51.493336",
             longitude: "-0.072699",
-            image: "https://s3.amazonaws.com/distilleryimage9/f994b0d4157011e28a2e22000a1ea02d_6.jpg"
+            image: "https://s3.amazonaws.com/distilleryimage9/f994b0d4157011e28a2e22000a1ea02d_6.jpg",
+            resrating: 3
         },
         {
             name: "Vapiano",
@@ -107,11 +114,14 @@ function CuisineTypeaheadCtrl($scope) {
             location: "Durham",
             latitude: "54.771633",
             longitude: "-1.568298",
-            image: "https://s3.amazonaws.com/distilleryimage9/b4ec5206c2e711e1be6a12313820455d_6.jpg"
+            image: "https://s3.amazonaws.com/distilleryimage9/b4ec5206c2e711e1be6a12313820455d_6.jpg",
+            resrating: 3
         }
     ];
-    
-    
+
+    $scope.maxrating = 5;
+    $scope.isReadonly = true;
+    $scope.rate = 4;
     
     $scope.search = function (item) {
         if (item.cuisine.indexOf($scope.selected.cuisine) != -1 || item.location.indexOf($scope.selected.location) != -1) {
