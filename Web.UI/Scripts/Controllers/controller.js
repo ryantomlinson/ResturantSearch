@@ -76,6 +76,38 @@ function CuisineTypeaheadCtrl($scope) {
             latitude: "54.771633",
             longitude: "-1.568298",
             image: "https://s3.amazonaws.com/distilleryimage2/6dde8aae149111e2b62322000a1e8a75_6.jpg"
+        },
+        {
+            name: "Saigon Saigon",
+            cuisine: "Vietnamese",
+            location: "Liverpool",
+            latitude: "51.511181",
+            longitude: "-0.062227",
+            image: "https://s3.amazonaws.com/distilleryimage9/4c93f00c40e511e2b41022000a9f1899_6.jpg"
+        },
+        {
+            name: "Busaba Eathai",
+            cuisine: "Thai",
+            location: "London",
+            latitude: "51.512677",
+            longitude: "-0.088148",
+            image: "https://s3.amazonaws.com/distilleryimage8/238928b2f95a11e1b65722000a1e9f8b_6.jpg"
+        },
+        {
+            name: "Toms Kitchen",
+            cuisine: "British",
+            location: "Birmingham",
+            latitude: "51.493336",
+            longitude: "-0.072699",
+            image: "https://s3.amazonaws.com/distilleryimage9/f994b0d4157011e28a2e22000a1ea02d_6.jpg"
+        },
+        {
+            name: "Vapiano",
+            cuisine: "Italian",
+            location: "Durham",
+            latitude: "54.771633",
+            longitude: "-1.568298",
+            image: "https://s3.amazonaws.com/distilleryimage9/b4ec5206c2e711e1be6a12313820455d_6.jpg"
         }
     ];
     
